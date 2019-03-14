@@ -1,0 +1,53 @@
+@media(min-width:768px){
+    .generalHeader{
+        background-color: rgba(255,255,255,.95);
+        box-shadow: 0 0 1px rgba(0,0,0,.1);
+        .quickEntreies{
+            width:920px;
+            margin:0 auto;
+            >li{
+                padding:0 15px;
+                height:60px;
+                display:inline-block;font-size:20px;
+            }
+        }
+    }
+    .mainContent{
+        padding-top:60px;
+        width:920px;
+
+    }
+    .HomeMainBox{
+        width:920px; margin:0 auto;
+    }
+    .rencenArticelList{
+
+        .recentArticleContent{
+            box-shadow: 0 0 10px .5px rgba(40,40,40,.3);
+            &:nth-child(odd){
+                .picCover{
+                    float:left;
+                    border-radius:12px 0 0 12px;
+                }
+                .textPreview{float:right}
+            }
+            &:nth-child(even){
+                .picCover{
+                    float:right;
+                    border-radius:0 12px 12px 0;
+                }
+                .textPreview{float:left}
+            }
+            .picCover{
+                width:55%;
+                height:100%;
+
+            }
+            .textPreview{
+                width:45%;
+                height:100%;
+
+            }
+        }
+    }
+}
