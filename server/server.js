@@ -25,7 +25,7 @@ app.use('/api',(req,res)=>{
     proxy.web(req,res,{target:targetUrl})
 })
 const targetUrl = `http://${baseConf.apiHost}:${baseConf.apiPort}`;
-//http://120.76.40.19:8080/pbc-app'
+
 const proxy = httpProxy.createProxyServer({
     target: targetUrl, changeOrigin: true
 });

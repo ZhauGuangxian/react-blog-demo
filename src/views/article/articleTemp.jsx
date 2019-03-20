@@ -28,13 +28,7 @@ class ArticleTemp extends Component{
         this.refreshComment = this.refreshComment.bind(this);
     }
 
-    componentWillMount(){
-        /*marked.setOptions({
 
-            highlight:  code => hljs.highlightAuto(code).value
-        })
-        */
-    }
     sendReply(currentCommentId,belong){
         this.setState({
             isReply:true,

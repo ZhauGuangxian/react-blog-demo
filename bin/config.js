@@ -7,7 +7,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, `../dist.v${pkg.version}`),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    host:'120.79.204.25',
+    host:'your host',
     port: '8080',
   },
   dev: {
@@ -18,11 +18,6 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    /*proxy: {
-      '/api': {
-        "target": "http://http://120.76.40.19:8080",
-        "changeOrigin": true,
-      }
-    }*/
+
   }
 }

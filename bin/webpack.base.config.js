@@ -2,7 +2,7 @@ const path = require('path')
 const config = require('./config')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const resolve = (dir) => path.join(__dirname, '..', dir)
-
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const assetsPath = (_path) => {
   const assetsSubDirectory = process.env.NODE_ENV === config.prod.ENV
     ? config.prod.assetsSubDirectory
@@ -29,16 +29,17 @@ module.exports = {
 
     }
   },
+
   module: {
     rules: [
       {
         test: /\.(js|jsx)/,
         use: {
-          loader:'babel-loader',
+          loader: 'babel-loader',
           options: {
             presets: ["env", "react", 'stage-0'],
             plugins: [
-              ['import', [{ libraryName: 'antd', javascriptEnabled: true ,style:true}]]
+              ['import', [{ libraryName: 'antd', style: true }]]
             ]
           }
         },
@@ -83,7 +84,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -91,20 +92,26 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
-
+        test: /\.less$/,
+        include: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
+          {
+            'loader': 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
         ]
       }
     ]
   },
-  plugins:[
+  plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[name].css'
-    })
+      filename: '[name].css'
+
+    }),
+    new LodashModuleReplacementPlugin
   ]
 }

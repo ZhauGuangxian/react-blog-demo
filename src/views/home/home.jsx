@@ -29,7 +29,9 @@ class HomePage extends Component{
         this.isLeave = false;
         //this.updateViewPort = this.updateViewport.bind(this);
 
-        this.viewMoreArticle = this.viewMoreArticle.bind(this)
+        this.viewMoreArticle = this.viewMoreArticle.bind(this);
+        document.addEventListener('scroll', this.updateViewport, false);
+        document.addEventListener('resize', this.updateViewport, false);
     }
     updateViewport= ()=>{
         let data = Object.assign({
@@ -42,12 +44,7 @@ class HomePage extends Component{
             })
         }
     }
-    componentWillMount(){
 
-        document.addEventListener('scroll', this.updateViewport, false);
-        document.addEventListener('resize', this.updateViewport, false);
-
-    }
     componentWillUnmount(){
 
         this.isLeave = true;

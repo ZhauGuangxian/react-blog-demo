@@ -14,14 +14,14 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: config.dev.ENV,
-  entry:{
-    app:[
+  entry: {
+    app: [
       'react-hot-loader/patch',
       `webpack-hot-middleware/client?path=http://${config.dev.host}:${config.dev.port}/__webpack_hmr`,
       './src/index.jsx'
     ],
   },
-  output:{
+  output: {
     path: config.dev.assetsRoot,
     chunkFilename: '[name].[chunkhash].js'
   },
