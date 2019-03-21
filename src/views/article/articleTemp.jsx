@@ -6,8 +6,7 @@ import hljs from 'highlight.js';
 import  SendComment from '../../components/sendComment.jsx';
 import CommentBlock from '@/components/comments.jsx';
 import tocbot from 'tocbot';
-import 'tocbot/src/scss/_tocbot-core.scss';
-import 'tocbot/src/scss/_tocbot-default-theme.scss';
+import './tocbot.pack.css';
 const preventA = (e)=>{
     e.preventDefault();
 }
