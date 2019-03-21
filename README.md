@@ -12,3 +12,4 @@ webpack+react 后台使用简单的express,
 1. 本地启动 npm run start 这一步是启动express后台接口服务
 2. 本地启动 npm run watch-client 这一步是启动web容器  
 3. 打包 npm run build
+4. 使用xampp初始化本地数据库
