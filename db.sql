@@ -109,6 +109,8 @@ CREATE TABLE `user` (
 
 
 
+INSERT INTO `user` (`img`, `nickname`, `username`, `sex`, `personal_intro`, `personal_website`, `id`, `password`) VALUES
+('https://user-gold-cdn.xitu.io/2018/10/28/166b9c6475b63772?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1', '阿尔托利亚·潘德拉贡', '13422223333', 2, '我的大刀早已饥渴难耐了', 'www.your.com', 1, '910d6d020bf619f01d10667e1b278c1b');
 --
 -- 转储表的索引
 --

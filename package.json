@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config bin/webpack.dev.config.js",
-    "start-dev-api": "nodemon --watch server/api server/api/index.js",
     "watch-client": "cross-env NODE_ENV=development pm2 start server/index.js",
     "build": "node bin/build.js",
-    "start": "pm2 start server/api/index.js"
+    "start": "pm2 start server/api/apiServer.js"
   },
   "keywords": [],
   "author": "",
